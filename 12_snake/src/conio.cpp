@@ -23,7 +23,7 @@ void set_conio_terminal_mode()
 
 int kbhit()
 {
-    struct timeval tv = {0L, 0L};
+    struct timeval tv = { 0L, 0L };
     fd_set fds;
     FD_ZERO(&fds);
     FD_SET(0, &fds);
@@ -34,17 +34,14 @@ int getch()
 {
     int r;
     unsigned char c;
-    if ((r = read(0, &c, sizeof(c))) < 0)
-    {
+    if ((r = read(0, &c, sizeof(c))) < 0) {
         return r;
-    }
-    else
-    {
+    } else {
         return c;
     }
 }
 
-int get_terminal_width()
+int get_terminal_width() 
 {
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
@@ -52,7 +49,7 @@ int get_terminal_width()
     return w.ws_col;
 }
 
-int get_terminal_height()
+int get_terminal_height() 
 {
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);

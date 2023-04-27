@@ -5,15 +5,14 @@
 
 class Part
 {
-private:
+    private:
     int x = 0;
     int y = 0;
     Part *next = nullptr;
     std::string data = "▢";
     int value = 0;
     static std::string unicode_letters[26];
-
-public:
+    public:
     Part(int x, int y, std::string d, int value = 0);
     ~Part();
     void draw();

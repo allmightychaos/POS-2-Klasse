@@ -17,23 +17,23 @@ Snake::Snake()
     srand(time(nullptr));
     border = new Part(1, 1, "▩");
     border->add(new Part(1, h, "▩"));
-    for (int i = 2; i <= w; i++)
+    for(int i = 2; i <= w; i++)
     {
         border->add(new Part(i, 1, "▩"));
         border->add(new Part(i, h, "▩"));
     }
-    for (int i = 2; i < h; i++)
+    for(int i = 2; i < h; i++)
     {
         border->add(new Part(1, i, "▩"));
         border->add(new Part(w, i, "▩"));
     }
     int v = rand() % 26;
     food = new Part(rand() % (w - 2) + 2, rand() % (h - 2) + 2, string(1, 'A' + v), v);
-    for (int i = 0; i < FOOD_AMOUNT; i++)
+    for(int i = 0; i < FOOD_AMOUNT; i++)
     {
         int fx = rand() % (w - 2) + 2;
         int fy = rand() % (h - 2) + 2;
-        if (food->contains(fx, fy))
+        if(food->contains(fx, fy))
         {
             i--;
         }
@@ -54,39 +54,39 @@ Snake::~Snake()
 
 int Snake::update()
 {
-    if (body)
+    if(body)
     {
         body->move(x, y);
     }
-    switch (dir)
+    switch(dir)
     {
-    case South:
-        y++;
-        break;
-    case North:
-        y--;
-        break;
-    case East:
-        x++;
-        break;
-    case West:
-        x--;
-        break;
+        case South:
+            y++;
+            break;
+        case North:
+            y--;
+            break;
+        case East:
+            x++;
+            break;
+        case West:
+            x--;
+            break;
     }
-    if (border->contains(x, y))
-    {
-        return -1;
-    }
-    if (body && body->contains(x, y))
+    if(border->contains(x, y))
     {
         return -1;
     }
-    if (food && food->contains(x, y))
+    if(body && body->contains(x, y))
+    {
+        return -1;
+    }
+    if(food && food->contains(x, y))
     {
         Part *p = food->get(x, y);
         food = food->remove(x, y);
         p->eat();
-        if (body)
+        if(body)
         {
             body = body->add(p);
         }
@@ -94,11 +94,11 @@ int Snake::update()
         {
             body = p;
         }
-        for (int i = 0; i < 150; i++)
+        for(int i = 0; i < 150; i++)
         {
             int fx = rand() % (w - 2) + 2;
             int fy = rand() % (h - 2) + 2;
-            if (!food->contains(fx, fy) && !body->contains(fx, fy))
+            if(!food->contains(fx, fy) && !body->contains(fx, fy))
             {
                 int v = rand() % 26;
                 food = food->add(new Part(fx, fy, string(1, 'A' + v), v));
@@ -114,28 +114,28 @@ void Snake::draw()
 {
     cout << "\033[2J";
     border->draw();
-    if (food)
+    if(food)
     {
         food->draw();
     }
-    if (body)
+    if(body)
     {
         body->draw();
     }
-    switch (dir)
+    switch(dir)
     {
-    case South:
-        cout << "\033[" << y << ";" << x << "H▽";
-        break;
-    case North:
-        cout << "\033[" << y << ";" << x << "H△";
-        break;
-    case East:
-        cout << "\033[" << y << ";" << x << "H▷";
-        break;
-    case West:
-        cout << "\033[" << y << ";" << x << "H◁";
-        break;
+        case South:
+            cout << "\033[" << y << ";" << x << "H▽"; 
+            break;
+        case North:
+            cout << "\033[" << y << ";" << x << "H△"; 
+            break;
+        case East:
+            cout << "\033[" << y << ";" << x << "H▷"; 
+            break;
+        case West:
+            cout << "\033[" << y << ";" << x << "H◁"; 
+            break;
     }
     cout << "\033[" << h << ";" << w << "H";
     cout.flush();

@@ -3,17 +3,11 @@
 
 #include "part.h"
 
-enum Direction
-{
-    East,
-    North,
-    West,
-    South
-};
+enum Direction {East, North, West, South};
 
 class Snake
 {
-private:
+    private:
     int x = 0;
     int y = 0;
     int w = 0;
@@ -22,8 +16,7 @@ private:
     Part *border = nullptr;
     Part *food = nullptr;
     Part *body = nullptr;
-
-public:
+    public:
     Snake();
     ~Snake();
     void draw();
