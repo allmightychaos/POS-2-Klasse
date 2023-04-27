@@ -16,3 +16,6 @@
 [submodule "08_Rekursionen"]
 	path = 08_Rekursionen
 	url = https://github.com/allmightychaos/08_Rekursionen
+[submodule "07_Mathematik"]
+	path = 07_Mathematik
+	url = https://github.com/allmightychaos/07_Mathematische_Rekursionen
