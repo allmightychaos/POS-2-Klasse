@@ -13,3 +13,6 @@
 [submodule "12_Snake"]
 	path = 12_Snake
 	url = https://github.com/allmightychaos/12_Snake
+[submodule "08_Rekursionen"]
+	path = 08_Rekursionen
+	url = ./08_Rekursionen
