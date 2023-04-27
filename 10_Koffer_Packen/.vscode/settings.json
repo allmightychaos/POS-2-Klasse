@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "__locale": "cpp",
+        "__string": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "iostream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

@@ -1,3 +1,12 @@
 [submodule "09_Hanoi"]
 	path = 09_Hanoi
 	url = https://github.com/allmightychaos/09_Hanoi
+[submodule "11_Freecell"]
+	path = 11_Freecell
+	url = https://github.com/allmightychaos/11_Freecell
+[submodule "13_RPN"]
+	path = 13_RPN
+	url = https://github.com/allmightychaos/13_RPN
+[submodule "12-Snake"]
+	path = 12-Snake
+	url = https://github.com/allmightychaos/12_Snake
