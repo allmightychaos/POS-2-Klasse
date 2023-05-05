@@ -19,3 +19,9 @@
 [submodule "07_Mathematik"]
 	path = 07_Mathematik
 	url = https://github.com/allmightychaos/07_Mathematische_Rekursionen
+[submodule "06_TicTacToe"]
+	path = 06_TicTacToe
+	url = https://github.com/allmightychaos/06_tictactoe
+[submodule "WriteToFile"]
+	path = WriteToFile
+	url = https://github.com/allmightychaos/WriteToFile
